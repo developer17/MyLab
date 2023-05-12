@@ -2,7 +2,7 @@ pipeline{
     //Directives
     agent any
     tools {
-        maven 'Maven'
+        Maven 'Maven'
     }
 
     stages {
