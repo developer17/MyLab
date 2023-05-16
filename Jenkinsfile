@@ -31,8 +31,8 @@ pipeline{
         // Stage3 : Publish the artifacts to Nexus
         stage ('Publish to Nexus'){
             steps {
-                script {
-                    nexusArtifactUploader artifacts: [[artifactId: 'VinaysDevOpsLab', classifier: '', file: 'target/VinaysDevOpsLab-0.0.5-SNAPSHOT.war', type: 'war']], credentialsId: '4e659e99-8a9a-41c8-812b-49833b51d47f', groupId: 'com.vinaysdevopslab', nexusUrl: 'ip-172-20-10-121.ec2.internal', nexusVersion: 'nexus3', protocol: 'http', repository: 'VinaysDevOpsLab-SNAPSHOT', version: '0.0.5-SNAPSHOT'
+                sscript {
+                    nexusArtifactUploader artifacts: [[artifactId: 'Respectful', classifier: '', file: 'target/Respectful-0.0.1-SNAPSHOT.war', type: 'war']], credentialsId: '4e659e99-8a9a-41c8-812b-49833b51d47f', groupId: 'com.respectful', nexusUrl: '172.20.10.121:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Respectful-Snapshot', version: '0.0.1-SNAPSHOT'
                 }
             }
         }
