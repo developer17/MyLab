@@ -33,7 +33,7 @@ pipeline{
             steps {
                 script {
                     def NexusRepo = Version.endsWith("SNAPSHOT") ? "Respectful-Snapshot" : "Respectful-Release"
-                    nexusArtifactUploader artifacts: [[artifactId: "${ArtifactId}", classifier: '', file: "target/${ArtifactId}-${Version}.war", type: 'war']], credentialsId: '4e659e99-8a9a-41c8-812b-49833b51d47f', groupId: "${GroupId}", nexusUrl: '172.20.10.249:8081', nexusVersion: 'nexus3', protocol: 'http', repository: "${NexusRepo}", version: "${Version}"
+                    nexusArtifactUploader artifacts: [[artifactId: "${ArtifactId}", classifier: '', file: "target/${ArtifactId}-${Version}.war", type: 'war']], credentialsId: '805ec1f5-d8ef-4a54-a4c4-4bdc52f86724', groupId: "${GroupId}", nexusUrl: '172.20.10.249:8081', nexusVersion: 'nexus3', protocol: 'http', repository: "${NexusRepo}", version: "${Version}"
                 }
             }
         }
