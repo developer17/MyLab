@@ -24,7 +24,7 @@ pipeline{
         stage ('Test'){
             steps {
                 echo ' testing......'
-                withSonarQubeEnv('sonarqube')
+                
             }
         }
 
@@ -32,9 +32,9 @@ pipeline{
         stage ('Sonarqube Analysis'){
             steps {
                 echo ' Source code published to Sonarqube for SCA '
-                { // You can override the credential to be used
+                withSonarQubeEnv('sonarqube'){ // You can override the credential to be used
                 sh 'mvn sonar:sonar'
-                }
+            }
         }
 
 
